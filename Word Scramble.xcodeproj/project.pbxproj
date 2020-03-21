@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482F83DD2426B927001E1EF2 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 482F83DC2426B927001E1EF2 /* start.txt */; };
 		48F4CDBD2424DBB500B88A89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4CDBC2424DBB500B88A89 /* AppDelegate.swift */; };
 		48F4CDBF2424DBB600B88A89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4CDBE2424DBB500B88A89 /* SceneDelegate.swift */; };
 		48F4CDC12424DBB600B88A89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4CDC02424DBB600B88A89 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		482F83DC2426B927001E1EF2 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		48F4CDB92424DBB500B88A89 /* Word Scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F4CDBC2424DBB500B88A89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48F4CDBE2424DBB500B88A89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,13 +58,14 @@
 		48F4CDBB2424DBB500B88A89 /* Word Scramble */ = {
 			isa = PBXGroup;
 			children = (
+				48F4CDCA2424DBB900B88A89 /* Info.plist */,
 				48F4CDBC2424DBB500B88A89 /* AppDelegate.swift */,
 				48F4CDBE2424DBB500B88A89 /* SceneDelegate.swift */,
 				48F4CDC02424DBB600B88A89 /* ViewController.swift */,
-				48F4CDC22424DBB600B88A89 /* Main.storyboard */,
+				482F83DC2426B927001E1EF2 /* start.txt */,
 				48F4CDC52424DBB900B88A89 /* Assets.xcassets */,
 				48F4CDC72424DBB900B88A89 /* LaunchScreen.storyboard */,
-				48F4CDCA2424DBB900B88A89 /* Info.plist */,
+				48F4CDC22424DBB600B88A89 /* Main.storyboard */,
 			);
 			path = "Word Scramble";
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F4CDC92424DBB900B88A89 /* LaunchScreen.storyboard in Resources */,
+				482F83DD2426B927001E1EF2 /* start.txt in Resources */,
 				48F4CDC62424DBB900B88A89 /* Assets.xcassets in Resources */,
 				48F4CDC42424DBB600B88A89 /* Main.storyboard in Resources */,
 			);
