@@ -29,6 +29,16 @@ class ViewController: UITableViewController {
         startGame()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return usedWords.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Word", for: indexPath)
+        cell.textLabel?.text = usedWords[indexPath.row]
+        return cell
+    }
+    
     private func startGame() {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
