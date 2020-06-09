@@ -16,6 +16,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(startOver))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(promptForAnswer))
         
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
@@ -45,6 +46,10 @@ class ViewController: UITableViewController {
         title = allWords.randomElement()
         usedWords.removeAll(keepingCapacity: true)
         tableView.reloadData()
+    }
+    
+    @objc private func startOver() {
+        startGame()
     }
     
     @objc private func promptForAnswer() {
@@ -86,9 +91,7 @@ class ViewController: UITableViewController {
             errorTitle = "Word not possible"
             errorMessage = "You can't spell that word from \(title)"
             
-            let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Ok", style: .default))
-            present(ac, animated: true)
+            showErrorMessage(errorMessage, withTitle: errorTitle)
         }
     }
     
@@ -111,9 +114,17 @@ class ViewController: UITableViewController {
     }
     
     private func isReal(word: String) -> Bool {
+        guard word != title && word.count >= 3 else { return false }
+        
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    private func showErrorMessage(_ message: String, withTitle title: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(ac, animated: true)
     }
 }
